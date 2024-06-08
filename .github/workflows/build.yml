@@ -30,15 +30,15 @@
                 #command to scan files
                 trivy fs .
 
-      #     - name: Docker build and push
-      #       run: |
-      #             #run commands to build and push docker images
-      #             docker build --build-arg TMDB_V3_API_KEY=e488ef946523a124190a363c8f008cdd -t netflix .
-      #             docker tag netflix sushantkapare1717/netflix:latest
-      #             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-      #             docker push sushantkapare1717/netflix:latest  
-      #       env:
-      #             DOCKER_CLI_ACI: 1
+          - name: Docker build and push
+            run: |
+                  #run commands to build and push docker images
+                  docker build --build-arg TMDB_V3_API_KEY=5aba853d8668e3c43e069096a7e0d436 -t netflix .
+                  docker tag netflix rosariaquenum/netflix:latest
+                  docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+                  docker push rosariaquenum/netflix:latest  
+            env:
+                  DOCKER_CLI_ACI: 1
       # deploy:    
       #   needs: build  
       #   runs-on: [aws-netflix]  
